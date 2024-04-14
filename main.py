@@ -6,15 +6,14 @@ from sqlalchemy.orm import sessionmaker
 
 from Models import create_tables, Publisher, Shop, Book, Stock, Sale
 
-# print('Type username:')
-# username = input()
-# print('Type password:')
-# password = int(input())
-# print('Type SQL base name:')
-# SQL_base_name = input()
-# DNS = f'postgresql://{username}:{password}@localhost:5432/{SQL_base_name}'
+print('Type username:')
+username = input()
+print('Type password:')
+password = int(input())
+print('Type SQL base name:')
+SQL_base_name = input()
 
-DNS = 'postgresql://postgres:311089@localhost:5432/Netology_SQL'
+DNS = f'postgresql://{username}:{password}@localhost:5432/{SQL_base_name}'
 
 engine = sa.create_engine(DNS)
 create_tables(engine)
