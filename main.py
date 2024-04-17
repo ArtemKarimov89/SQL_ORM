@@ -5,12 +5,9 @@ from Models import create_tables, Publisher, Shop, Book, Stock, Sale
 
 
 def create_session():
-    print('Type username:')
-    username = input()
-    print('Type password:')
-    password = int(input())
-    print('Type SQL base name:')
-    SQL_base_name = input()
+    username = input('Type username: ')
+    password = int(input('Type password: '))
+    SQL_base_name = input('Type SQL base name: ')
     DNS = f'postgresql://{username}:{password}@localhost:5432/{SQL_base_name}'
     engine = sa.create_engine(dns)
     create_tables(engine)
